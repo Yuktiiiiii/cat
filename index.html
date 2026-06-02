@@ -39,34 +39,10 @@
           <a href="#facts">Quick facts</a>
           <a href="#favorites">Favorites</a>
           <a href="#gallery">Gallery</a>
+          <a href="./game.html">Hide &amp; seek</a>
         </nav>
       </div>
     </header>
-
-    <aside class="hud" aria-label="Kutchu Quest HUD">
-      <div class="hud-inner">
-        <button id="questBtn" class="hud-btn" type="button" aria-haspopup="dialog">
-          <span class="hud-ico" aria-hidden="true">🗺️</span>
-          <span class="hud-label">Quest</span>
-        </button>
-
-        <div class="hud-meter" aria-label="Quest progress">
-          <div class="hud-meter-top">
-            <span class="hud-meter-title">Kutchu Quest</span>
-            <span id="progressText" class="hud-meter-val">0%</span>
-          </div>
-          <div class="hud-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div id="hudBarFill" class="hud-bar-fill"></div>
-          </div>
-        </div>
-
-        <button id="treatBtn" class="hud-btn treat" type="button">
-          <span class="hud-ico" aria-hidden="true">🍪</span>
-          <span class="hud-label">Treats</span>
-          <span id="treatCount" class="hud-badge" aria-label="Treat count">0</span>
-        </button>
-      </div>
-    </aside>
 
     <main id="main">
       <section class="hero">
@@ -80,7 +56,7 @@
             <div class="hero-cta">
               <a class="btn primary" href="#gallery">See photos</a>
               <a class="btn ghost" href="#facts">Learn quick facts</a>
-              <button id="playBtn" class="btn primary" type="button">Play hide & seek</button>
+              <a class="btn primary" href="./game.html">Play hide &amp; seek</a>
             </div>
             <dl class="mini-stats" aria-label="Highlights">
               <div>
@@ -123,8 +99,8 @@
             <h2>Kutchu’s world</h2>
             <p>
               Kutchu is a charming orange tabby from Bhopal with a big personality packed into a small, furry body.
-              He’s expressive, playful, and endlessly curious—always checking corners, sneaking into hiding spots,
-              and following his favorite human around.
+              She’s expressive, playful, and endlessly curious—always checking corners, sneaking into hiding spots,
+              and following her favorite human around.
             </p>
           </div>
 
@@ -132,21 +108,21 @@
             <article class="card">
               <h3>About</h3>
               <p>
-                A handsome ginger tabby with golden amber eyes and a sleek striped coat. He looks adventurous, but
-                he’s also gentle and affectionate with the people he trusts.
+                A gorgeous ginger tabby with golden amber eyes and a sleek striped coat. She looks adventurous, but
+                she’s also gentle and affectionate with the people she trusts.
               </p>
             </article>
             <article class="card">
               <h3>Kutchu & Beeg</h3>
               <p>
-                One of the most important relationships in Kutchu’s life is with <strong>Beeg</strong>. He follows,
+                One of the most important relationships in Kutchu’s life is with <strong>Beeg</strong>. She follows,
                 sits nearby, and demands attention at the funniest possible times.
               </p>
             </article>
             <article class="card">
               <h3>Family</h3>
               <p>
-                Kutchu once had a sister who shared his early adventures. She remains an important part of his story
+                Kutchu once had a sister who shared her early adventures. She remains an important part of Kutchu’s story
                 and family history.
               </p>
             </article>
@@ -188,7 +164,7 @@
         <div class="container">
           <div class="section-head">
             <h2>Things Kutchu loves (and doesn’t)</h2>
-            <p>He’s brave, but he has preferences.</p>
+            <p>She’s brave, but she has preferences.</p>
           </div>
 
           <div class="split">
@@ -209,14 +185,6 @@
           <div class="section-head">
             <h2>Gallery</h2>
             <p>Tap a photo to zoom. (Pro tip: the hide-and-seek shots are legendary.)</p>
-          </div>
-
-          <div class="game-banner" aria-label="Mini game callout">
-            <div class="game-banner-copy">
-              <h3>Mini game: Find Kutchu</h3>
-              <p>One of these cards is where Kutchu is hiding. Find him to unlock a badge.</p>
-            </div>
-            <button id="startGameBtn" class="btn primary" type="button">Start game</button>
           </div>
 
           <div class="gallery-toolbar">
@@ -252,38 +220,6 @@
       </div>
     </div>
 
-    <div id="questModal" class="modal" aria-hidden="true" role="dialog" aria-label="Kutchu Quest">
-      <div class="modal-backdrop" data-close="true"></div>
-      <div class="modal-card" role="document">
-        <div class="modal-head">
-          <h2>Kutchu Quest</h2>
-          <button class="modal-x" type="button" aria-label="Close" data-close="true">✕</button>
-        </div>
-        <p class="modal-sub">Collect treats, visit sections, and find Kutchu hiding.</p>
-
-        <div class="quest-grid">
-          <div class="quest-panel">
-            <h3>Map</h3>
-            <div class="map">
-              <a class="map-node" href="#story" data-quest="visited_story">📖 <span>Story</span></a>
-              <a class="map-node" href="#facts" data-quest="visited_facts">🧾 <span>Facts</span></a>
-              <a class="map-node" href="#favorites" data-quest="visited_favorites">💛 <span>Favorites</span></a>
-              <a class="map-node" href="#gallery" data-quest="visited_gallery">🖼️ <span>Gallery</span></a>
-            </div>
-          </div>
-          <div class="quest-panel">
-            <h3>Achievements</h3>
-            <ul id="questList" class="quest-list" aria-label="Quest checklist"></ul>
-            <div id="badgeShelf" class="badge-shelf" aria-label="Badges"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
-
-    <div id="confetti" class="confetti" aria-hidden="true"></div>
-
     <script id="kutchuData" type="application/json">
       {
         "name": "Kutchu",
@@ -317,7 +253,7 @@
           { "src": "kucthu likes sleeping.jpeg", "caption": "Kutchu likes sleeping.", "tags": ["sleep"] },
           { "src": "baby kutchu.jpeg", "caption": "Baby Kutchu.", "tags": ["family"] },
           { "src": "kutchu and beeg.jpeg", "caption": "Kutchu & Beeg.", "tags": ["family"] },
-          { "src": "kutchu and sister.jpeg", "caption": "Kutchu & his sister.", "tags": ["family"] },
+          { "src": "kutchu and sister.jpeg", "caption": "Kutchu & her sister.", "tags": ["family"] },
           { "src": "hide and seek.jpeg", "caption": "Hide and seek champion.", "tags": ["hide"] },
           { "src": "kutchu likes playing hide and seek.jpeg", "caption": "Hide-and-seek: expert level.", "tags": ["hide"] }
         ]
