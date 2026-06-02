@@ -16,10 +16,10 @@ Then open `http://localhost:5173` in your browser.
 
 ### Option B: open the file directly
 
-You can double-click `index.html`, but some browsers block `fetch()` for local files. If the page looks empty, use **Option A**.
+You can double-click `index.html`. This project embeds the site data directly inside the HTML, so it should still render.
 
 ## Update content
 
-- Edit `data/kutchu.json` to change facts, motto, favorites, and gallery captions.
-- Add more images to `photos/` and add them to the `gallery` array in `data/kutchu.json`.
+- The site data is embedded in `index.html` in a `<script type="application/json" id="kutchuData">...</script>` block.
+- Add more images to `photos/` and add them to the `gallery` array inside that embedded JSON.
 

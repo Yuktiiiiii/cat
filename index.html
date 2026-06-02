@@ -12,7 +12,7 @@
     <meta property="og:title" content="Meet Kutchu" />
     <meta
       property="og:description"
-      content="A website about Kutchu: story, quick facts, and photo gallery."
+      content="A friendly pastel website about Kutchu: story, quick facts, and photo gallery."
     />
     <meta property="og:type" content="website" />
 
@@ -43,6 +43,31 @@
       </div>
     </header>
 
+    <aside class="hud" aria-label="Kutchu Quest HUD">
+      <div class="hud-inner">
+        <button id="questBtn" class="hud-btn" type="button" aria-haspopup="dialog">
+          <span class="hud-ico" aria-hidden="true">🗺️</span>
+          <span class="hud-label">Quest</span>
+        </button>
+
+        <div class="hud-meter" aria-label="Quest progress">
+          <div class="hud-meter-top">
+            <span class="hud-meter-title">Kutchu Quest</span>
+            <span id="progressText" class="hud-meter-val">0%</span>
+          </div>
+          <div class="hud-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="hudBarFill" class="hud-bar-fill"></div>
+          </div>
+        </div>
+
+        <button id="treatBtn" class="hud-btn treat" type="button">
+          <span class="hud-ico" aria-hidden="true">🍪</span>
+          <span class="hud-label">Treats</span>
+          <span id="treatCount" class="hud-badge" aria-label="Treat count">0</span>
+        </button>
+      </div>
+    </aside>
+
     <main id="main">
       <section class="hero">
         <div class="container hero-grid">
@@ -55,6 +80,7 @@
             <div class="hero-cta">
               <a class="btn primary" href="#gallery">See photos</a>
               <a class="btn ghost" href="#facts">Learn quick facts</a>
+              <button id="playBtn" class="btn primary" type="button">Play hide & seek</button>
             </div>
             <dl class="mini-stats" aria-label="Highlights">
               <div>
@@ -76,7 +102,7 @@
             <figure class="frame">
               <img
                 id="heroImage"
-                src="hiii.jpeg"
+                src="./hiii.jpeg"
                 alt="Kutchu looking curious and adorable"
                 loading="eager"
                 decoding="async"
@@ -185,6 +211,14 @@
             <p>Tap a photo to zoom. (Pro tip: the hide-and-seek shots are legendary.)</p>
           </div>
 
+          <div class="game-banner" aria-label="Mini game callout">
+            <div class="game-banner-copy">
+              <h3>Mini game: Find Kutchu</h3>
+              <p>One of these cards is where Kutchu is hiding. Find him to unlock a badge.</p>
+            </div>
+            <button id="startGameBtn" class="btn primary" type="button">Start game</button>
+          </div>
+
           <div class="gallery-toolbar">
             <button class="chip-btn" type="button" data-filter="all" aria-pressed="true">All</button>
             <button class="chip-btn" type="button" data-filter="hello" aria-pressed="false">Hello</button>
@@ -200,7 +234,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p></p>
+        <p class="tiny">Tip: press <kbd>→</kbd>/<kbd>←</kbd> in the viewer to browse photos.</p>
         <button id="backToTop" class="btn small ghost" type="button">Back to top</button>
       </div>
     </footer>
@@ -217,6 +251,38 @@
         </div>
       </div>
     </div>
+
+    <div id="questModal" class="modal" aria-hidden="true" role="dialog" aria-label="Kutchu Quest">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-card" role="document">
+        <div class="modal-head">
+          <h2>Kutchu Quest</h2>
+          <button class="modal-x" type="button" aria-label="Close" data-close="true">✕</button>
+        </div>
+        <p class="modal-sub">Collect treats, visit sections, and find Kutchu hiding.</p>
+
+        <div class="quest-grid">
+          <div class="quest-panel">
+            <h3>Map</h3>
+            <div class="map">
+              <a class="map-node" href="#story" data-quest="visited_story">📖 <span>Story</span></a>
+              <a class="map-node" href="#facts" data-quest="visited_facts">🧾 <span>Facts</span></a>
+              <a class="map-node" href="#favorites" data-quest="visited_favorites">💛 <span>Favorites</span></a>
+              <a class="map-node" href="#gallery" data-quest="visited_gallery">🖼️ <span>Gallery</span></a>
+            </div>
+          </div>
+          <div class="quest-panel">
+            <h3>Achievements</h3>
+            <ul id="questList" class="quest-list" aria-label="Quest checklist"></ul>
+            <div id="badgeShelf" class="badge-shelf" aria-label="Badges"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <div id="confetti" class="confetti" aria-hidden="true"></div>
 
     <script id="kutchuData" type="application/json">
       {
