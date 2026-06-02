@@ -39,9 +39,20 @@ function showNext(state, dir) {
   openLightbox(state, next);
 }
 
+function readEmbeddedData() {
+  const tag = $("#kutchuData");
+  if (!tag) return null;
+  const txt = tag.textContent || "";
+  try {
+    return JSON.parse(txt);
+  } catch {
+    return null;
+  }
+}
+
 async function init() {
-  const res = await fetch("./data/kutchu.json", { cache: "no-store" });
-  const data = await res.json();
+  const data = readEmbeddedData();
+  if (!data) throw new Error("Missing embedded Kutchu data.");
 
   // Hero
   const heroImg = $("#heroImage");
