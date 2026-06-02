@@ -1,0 +1,41 @@
+{
+  "name": "Kutchu",
+  "location": "Bhopal, India",
+  "species": "Domestic Cat",
+  "coat": "Orange/Ginger Tabby",
+  "eyeColor": "Golden Amber",
+  "personality": ["Curious", "Playful", "Cautious", "Affectionate", "Intelligent"],
+  "motto": "Hide first. Investigate later. Trust Beeg. Repeat.",
+  "loves": [
+    "Hide and seek (boxes, curtains, cupboards… nothing is safe)",
+    "Exploring every room and investigating every sound",
+    "Spending time with Beeg"
+  ],
+  "dislikes": ["New people (prefers observing from a safe distance first)"],
+  "dayInLife": [
+    "Wake up with important cat business to attend to",
+    "Inspect the house for anything suspicious",
+    "Play hide and seek",
+    "Keep an eye on Beeg",
+    "Find the perfect nap spot",
+    "Look adorable without even trying",
+    "Demand attention at precisely the right moment"
+  ],
+  "hero": {
+    "src": "photos/hiii.jpeg",
+    "caption": "Always investigating."
+  },
+  "gallery": [
+    { "src": "photos/hiii.jpeg", "caption": "Hiii.", "tags": ["hello"] },
+    { "src": "photos/say hello.jpeg", "caption": "Say hello.", "tags": ["hello"] },
+    { "src": "photos/meow.jpeg", "caption": "Meow mode.", "tags": ["hello"] },
+    { "src": "photos/look whos awake.jpeg", "caption": "Look who’s awake.", "tags": ["hello"] },
+    { "src": "photos/kucthu likes sleeping.jpeg", "caption": "Kutchu likes sleeping.", "tags": ["sleep"] },
+    { "src": "photos/baby kutchu.jpeg", "caption": "Baby Kutchu.", "tags": ["family"] },
+    { "src": "photos/kutchu and beeg.jpeg", "caption": "Kutchu & Beeg.", "tags": ["family"] },
+    { "src": "photos/kutchu and sister.jpeg", "caption": "Kutchu & his sister.", "tags": ["family"] },
+    { "src": "photos/hide and seek.jpeg", "caption": "Hide and seek champion.", "tags": ["hide"] },
+    { "src": "photos/kutchu likes playing hide and seek.jpeg", "caption": "Hide-and-seek: expert level.", "tags": ["hide"] }
+  ]
+}
+
